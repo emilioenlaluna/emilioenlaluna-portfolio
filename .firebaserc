@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "emilioenlaluna-portfolio"
+  },
+  "targets": {
+    "emilioenlaluna-portfolio": {
+      "hosting": {
+        "emilioenlaluna-portfolio": [
+          "emilioenlaluna-portfolio"
+        ]
+      }
+    }
+  }
+}

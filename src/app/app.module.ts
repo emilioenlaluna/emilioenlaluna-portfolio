@@ -14,6 +14,12 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { MeComponent } from './components/me/me.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HomeComponent } from './components/home/home.component';
+import { UxComponent } from './components/ux/ux.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AwardsComponent,
     ExperienceComponent,
     MeComponent,
-    ContactComponent
+    ContactComponent,
+    HomeComponent,
+    UxComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    provideFirebaseApp(() => initializeApp({"projectId":"emilioenlaluna-portfolio","appId":"1:373243484630:web:b5c8d84e31c6ac921f2c77","databaseURL":"https://emilioenlaluna-portfolio-default-rtdb.firebaseio.com","storageBucket":"emilioenlaluna-portfolio.appspot.com","apiKey":"AIzaSyBf6321k7l45vDJJ9UbS7oWA2Bgs-bbjH4","authDomain":"emilioenlaluna-portfolio.firebaseapp.com","messagingSenderId":"373243484630","measurementId":"G-54W1YKQXCP"})),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]
