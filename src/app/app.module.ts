@@ -20,6 +20,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
     provideFirebaseApp(() => initializeApp({"projectId":"emilioenlaluna-portfolio","appId":"1:373243484630:web:b5c8d84e31c6ac921f2c77","databaseURL":"https://emilioenlaluna-portfolio-default-rtdb.firebaseio.com","storageBucket":"emilioenlaluna-portfolio.appspot.com","apiKey":"AIzaSyBf6321k7l45vDJJ9UbS7oWA2Bgs-bbjH4","authDomain":"emilioenlaluna-portfolio.firebaseapp.com","messagingSenderId":"373243484630","measurementId":"G-54W1YKQXCP"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    HttpClientModule,
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]
