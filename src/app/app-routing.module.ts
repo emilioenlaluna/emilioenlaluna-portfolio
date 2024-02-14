@@ -12,6 +12,7 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
 import { UxComponent } from './components/ux/ux.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {  path: "awards", component: AwardsComponent},
@@ -26,6 +27,8 @@ const routes: Routes = [
   {  path: "skills", component: SkillsComponent},
   {  path: "ux", component: UxComponent},
   {  path: "volunteering", component: VolunteeringComponent},
+  { path: '**', redirectTo: '/404' }, // Wildcard route
+  { path: '404', component: NotFoundComponent }, // 404 route
 ];
 
 @NgModule({

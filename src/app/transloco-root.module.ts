@@ -5,7 +5,7 @@ import {
 import { NgModule } from '@angular/core';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { environment } from '../../src/environments/environment.prod';
-
+import { provideTranslocoPersistLang } from '@ngneat/transloco-persist-lang';
 @NgModule({
   exports: [ TranslocoModule ],
   providers: [
@@ -19,6 +19,13 @@ import { environment } from '../../src/environments/environment.prod';
         },
         loader: TranslocoHttpLoader
       }),
+      provideTranslocoPersistLang({
+        storage: {
+          useValue: localStorage,
+        },
+      }),
   ],
+  
+  
 })
 export class TranslocoRootModule {}

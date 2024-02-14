@@ -1,1 +1,18 @@
+<div class="languaje">
+    <button *ngFor="let language of languagesList; index as i" (click)="changeLanguage(language.code)"
+      class="boton-oculto">
+      <img [src]="language.imgUrl" [alt]="language.name" [title]="language.name" />
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+  
+  <label for="darkMode" style="display: none;">Dark Mode</label>
+  <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()" class="toggle" />
+  
+  <label class="toggle-label" for="darkMode">
+    <img src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" class="moon"
+      alt="Dark Mode Toggle" title="Dark Mode Toggle" />
+    <img src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" class="sun"
+      alt="Light Mode Toggle" title="Light Mode Toggle" />
+  </label>
 <router-outlet></router-outlet>

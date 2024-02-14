@@ -1,1 +1,54 @@
-<p>resume works!</p>
+<main id="main">
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row mb-4 align-items-center">
+        <div class="col-md-6" data-aos="fade-up">
+
+          <h2>Curriculum Vitae - English</h2>
+
+
+        </div>
+
+
+        <pdf-viewer [src]="src" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false"
+          [zoom]="1" [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true"
+          [external-link-target]="'blank'" [autoresize]="true" [show-borders]="false"
+          style="width: 90%; height: 600px;"></pdf-viewer>
+        
+
+
+    
+
+
+      </div>
+      <button class="readmore" (click)="downloadPdf()">Download PDF</button>
+
+    </div>
+<br>
+
+    <div class="container">
+      <div class="row mb-4 align-items-center">
+        
+        <div class="col-md-6" data-aos="fade-up">
+
+          <h2>Curriculum Vitae - Spanish</h2>
+
+
+        </div>
+
+        <pdf-viewer [src]="src" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false"
+          [zoom]="1" [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true"
+          [external-link-target]="'blank'" [autoresize]="true" [show-borders]="false"
+          style="width: 90%; height: 600px;"></pdf-viewer>
+
+        
+
+
+
+      </div>
+      <button class="readmore" (click)="downloadPdfSpanish()">Descargar PDF</button>
+
+    </div>
+  </div>
+</main>
