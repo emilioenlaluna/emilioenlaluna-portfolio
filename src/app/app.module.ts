@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -53,14 +56,15 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
       
     }),
     PdfViewerModule,
-    provideFirebaseApp(() => initializeApp({"projectId":"emilioenlaluna-portfolio","appId":"1:373243484630:web:b5c8d84e31c6ac921f2c77","databaseURL":"https://emilioenlaluna-portfolio-default-rtdb.firebaseio.com","storageBucket":"emilioenlaluna-portfolio.appspot.com","apiKey":"AIzaSyBf6321k7l45vDJJ9UbS7oWA2Bgs-bbjH4","authDomain":"emilioenlaluna-portfolio.firebaseapp.com","messagingSenderId":"373243484630","measurementId":"G-54W1YKQXCP"})),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     HttpClientModule,
-    TranslocoRootModule
+    TranslocoRootModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [  { provide: FIREBASE_OPTIONS, useValue: environment.firebase }   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

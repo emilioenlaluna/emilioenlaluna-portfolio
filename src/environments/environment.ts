@@ -1,11 +1,13 @@
 export const environment = {
     firebase: {
-      apiKey: "AIzaSyCxpNHxPt8PrjtVIc6YWHz9vdzzIDcHO7w",
-      authDomain: "emilioenlaluna.firebaseapp.com",
-      projectId: "emilioenlaluna",
-      storageBucket: "emilioenlaluna.appspot.com",
-      messagingSenderId: "71386887821",
-      appId: "1:71386887821:web:cee0f00d6d1873a5e0d4c4"
+      apiKey: "AIzaSyBf6321k7l45vDJJ9UbS7oWA2Bgs-bbjH4",
+      authDomain: "emilioenlaluna-portfolio.firebaseapp.com",
+      databaseURL: "https://emilioenlaluna-portfolio-default-rtdb.firebaseio.com",
+      projectId: "emilioenlaluna-portfolio",
+      storageBucket: "emilioenlaluna-portfolio.appspot.com",
+      messagingSenderId: "373243484630",
+      appId: "1:373243484630:web:b5c8d84e31c6ac921f2c77",
+      measurementId: "G-54W1YKQXCP"
     },
     production: false,
   };

@@ -45,17 +45,6 @@
   });
 
 
-  var siteOwlCarousel = function() {
-  	$('.testimonial-carousel').owlCarousel({
-		  center: true,
-	    items: 1,
-	    loop: true,
-	    margin: 0,
-	    autoplay: true,
-	    smartSpeed: 1000,
-		});
-  };
-  siteOwlCarousel();
 
 
 })(jQuery);

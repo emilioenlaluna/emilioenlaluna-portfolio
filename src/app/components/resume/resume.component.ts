@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ResumeComponent {
 
-  src = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
+  src = 'https://emilioenlaluna.github.io/emilioenlaluna/emilioenlaluna.pdf';
+  srcEnglish = 'https://emilioenlaluna.github.io/emilioenlaluna/emilioenlalunaEnglish.pdf';
   // pdfSrc: string | PDFSource | ArrayBuffer = './assets/pdf-test.pdf';
   downloadPdf() {
-    const pdfUrl = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf'; // Reemplaza con la URL del archivo PDF en GitHub o en otro servidor accesible
+    const pdfUrl = 'https://emilioenlaluna.github.io/emilioenlaluna/emilioenlalunaEnglish.pdf'; // Reemplaza con la URL del archivo PDF en GitHub o en otro servidor accesible
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'nombre_del_archivo.pdf'; // Cambia el nombre del archivo descargado si lo deseas
@@ -20,7 +21,7 @@ export class ResumeComponent {
 
   
   downloadPdfSpanish() {
-    const pdfUrl = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf'; // Reemplaza con la URL del archivo PDF en GitHub o en otro servidor accesible
+    const pdfUrl = 'https://emilioenlaluna.github.io/emilioenlaluna/emilioenlaluna.pdf'; // Reemplaza con la URL del archivo PDF en GitHub o en otro servidor accesible
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'nombre_del_archivo.pdf'; // Cambia el nombre del archivo descargado si lo deseas
