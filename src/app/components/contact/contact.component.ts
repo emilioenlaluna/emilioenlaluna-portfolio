@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContactService } from 'src/app/services/contact.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -12,9 +12,9 @@ export class ContactComponent {
   public contactForm: FormGroup = this.fb.group({
     nombre: ['', [Validators.required]],
     asunto: ['', [Validators.required]],
-    correo: ['',[Validators.required,],],
+    correo: ['',[Validators.required,Validators.email],],
     numero: ['', [Validators.required,]],
-    descripcion: ['', [Validators.required,]],
+    descripcion: ['', [Validators.required,Validators.minLength(10)]],
   });
   constructor(
     public crudApi: ContactService,
@@ -22,10 +22,6 @@ export class ContactComponent {
   ) {
 
   }
-  ngOnInit() {
-
-  }
-
 
 
 

@@ -1,19 +1,17 @@
 <main id="main">
   <div class="site-section pb-0 site-portfolio">
     <div class="container">
-
       <div class="row mb-5 align-items-end">
         <div class="col-md-6" data-aos="fade-up">
           <h2>Contact</h2>
           <p class="mb-0">Share with me all your ideas.
           </p>
         </div>
-
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
-          <form [formGroup]="contactForm" (ngSubmit)="submitContactData()" novalidate class="php-email-form">
+          <form [formGroup]="contactForm" (ngSubmit)="submitContactData()"  class="php-email-form">
 
             <div class="row">
               <div class="col-md-6 form-group">
@@ -31,13 +29,24 @@
                 <p *ngIf="contactForm.controls['correo'].errors?.['required']" class="error">
                   <sup>*</sup>{{ 'contact.emailRequiredError' | transloco }}
                 </p>
+                <p *ngIf="contactForm.controls['correo'].errors?.['email']" class="error">
+                  <sup>*</sup>Invalid Email
+                </p>
               </div>
-              <div class="col-md-12 form-group">
+              <div class="col-md-6 form-group">
                 <label for="subject">{{ 'contact.matterLabel' | transloco }}</label>
                 <input type="text" class="form-control" formControlName="asunto" id="subject" required />
                 <div class="validate"></div>
                 <p *ngIf="contactForm.controls['asunto'].errors?.['required']" class="error">
                   <sup>*</sup>{{ 'contact.matterRequiredError' | transloco }}
+                </p>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="numero">{{ 'contact.mobileNumberLabel' | transloco }}</label>
+                <input type="text" class="form-control" formControlName="numero" id="numero" required />
+                <div class="validate"></div>
+                <p *ngIf="contactForm.controls['numero'].errors?.['required']" class="error">
+                  <sup>*</sup>{{ 'contact.mobileNumberRequiredError' | transloco }}
                 </p>
               </div>
               <div class="col-md-12 form-group">
@@ -48,14 +57,11 @@
                 <p *ngIf="contactForm.controls['descripcion'].errors?.['required']" class="error">
                   <sup>*</sup>{{ 'contact.descriptionRequiredError' | transloco }}
                 </p>
+                <p *ngIf="contactForm.controls['descripcion'].errors?.['minLength']" class="error">
+                  <sup>*</sup>Add more info...
+                </p>
               </div>
-
-
-              <div class="col-md-12 mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">{{ 'contact.sentMessage' | transloco }}</div>
-              </div>
+            
 
               <div class="col-md-6 form-group">
                 <button type="submit" class="readmore d-block w-100" [disabled]="!contactForm.valid">

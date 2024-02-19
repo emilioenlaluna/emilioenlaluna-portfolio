@@ -27,6 +27,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.prod';
+import { ToastrModule } from 'ngx-toastr'; // Importa ngx-toastr
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { environment } from 'src/environments/environment.prod';
     provideDatabase(() => getDatabase()),
     HttpClientModule,
     TranslocoRootModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [  { provide: FIREBASE_OPTIONS, useValue: environment.firebase }   ],
   bootstrap: [AppComponent]
